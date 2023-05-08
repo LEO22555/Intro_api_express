@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "jest",
-    "dev": "ts-node src/server.ts"
+    "dev": "ts-node src/routes/server.ts"
   },
   "keywords": [],
   "author": "",

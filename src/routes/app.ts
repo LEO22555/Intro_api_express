@@ -5,7 +5,7 @@ import express,{Application, Request, Response, NextFunction} from 'express'
 const app:Application=express()
 
 //2. Respuesta cuando el recurso no existe
-app.use ({req:Request, res:Response, next:NextFunction}=>{
+app.use ((req: Request, res:Response, next:NextFunction)=>{
     res.status(404).json({message:"Upss! lo que pidió no existe!"})
 })
 
