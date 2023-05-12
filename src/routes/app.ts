@@ -1,10 +1,19 @@
 import express,{Application, Request, Response, NextFunction} from 'express'
+import dotenv from 'dotenv'
+dotenv.config()
+
+import rutas_ejemplo from './rutas_ejemplo'
+import rutas_auth from './authRoutes'
 
 //1. Crear un objeto express
 
 const app:Application=express()
 
-//2. Respuesta cuando el recurso no existe
+//1.1 Emplear las rutas
+app.use('/auth', rutas_auth)
+app.use('/', rutas_ejemplo)
+
+//2. Respuesta cuando el recurso no existe 
 app.use ((req: Request, res:Response, next:NextFunction)=>{
     res.status(404).json({message:"Upss! lo que pidió no existe!"})
 })
